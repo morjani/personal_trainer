@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="light-style layout-navbar-fixed layout-menu-fixed layout-compact " dir="ltr" data-theme="theme-default" data-assets-path="../../assets/" data-template="vertical-menu-template">
 
 <head>
 
@@ -10,25 +10,30 @@
     <meta content="Morjani" name="author" />
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <link rel="shortcut icon" href="{{ '/assets/images/favicon.ico' }}">
-    <link href="{{ asset('/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/assets/libs/sweetalert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/assets/libs/select2/css/select2.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/assets/libs/dropify/dist/css/dropify.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/assets/libs/loadingoverlay/loaddingoverlay.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/assets/libs/fullcalendar/core/main.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/assets/libs/fullcalendar/daygrid/main.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/assets/libs/fullcalendar/bootstrap/main.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/assets/libs/fullcalendar/timegrid/main.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/assets/css/style.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;ampdisplay=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/fonts/fontawesome.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/fonts/tabler-icons.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/fonts/flag-icons.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/css/rtl/core.css') }}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/css/rtl/theme-default.css') }}" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="{{ asset('/assets/css/demo.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/libs/node-waves/node-waves.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/libs/typeahead-js/typeahead.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/libs/apex-charts/apex-charts.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/libs/swiper/swiper.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/vendor/css/pages/cards-advance.css') }}" />
+    <script src="{{ asset('/assets/vendor/js/helpers.js') }}"></script>
+    <script src="{{ asset('/assets/js/config.js') }}"></script>
 
 </head>
 
 <body data-sidebar="dark" data-layout-mode="light">
 
-<div id="layout-wrapper">
+<div class="layout-wrapper layout-content-navbar  ">
+    <div class="layout-container">
