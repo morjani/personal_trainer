@@ -8,6 +8,7 @@ use App\Http\Controllers\BillController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SiteMetaController;
+use App\Http\Controllers\RootController;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -79,3 +80,5 @@ Route::group(['middleware'=>['auth']],function(){
 Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
 });
+
+Route::get('/home',[RootController::class,'index'])->name('index');

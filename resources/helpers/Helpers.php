@@ -31,6 +31,29 @@ function back_view($view, $data=array(), $no_assets=false, $return = false): boo
     return $return ? $output : TRUE;
 }
 
+function frontView($view, $data=array(), $no_assets=false, $return = false): bool|string
+{
+
+
+    if(!isset($data['page'])) $data['page'] = 'Accueil';
+
+    $default = array(
+        'page_title'     => $data['page'] . " | CRM",
+    );
+
+    $data = array_merge($data, $default);
+
+    $output = '';
+
+    if(!$no_assets) $output .= view('front/layouts/header',$data);
+    $output .= view($view,$data);
+    if(!$no_assets) $output .= view('front/layouts/footer',$data);
+
+    if(!$return) echo $output;
+
+    return $return ? $output : TRUE;
+}
+
 function currentUser(){
 
     $session = new Session();
