@@ -26,7 +26,7 @@ Route::group(['middleware'=>['auth']],function(){
 
     //Dashboad
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
-    Route::get('/',[BillController::class,'index']);
+
 
     //Service
     Route::get('/service/categories',[ServiceController::class,'categories'])->name('categories');
@@ -66,7 +66,7 @@ Route::group(['middleware'=>['auth']],function(){
     //Profile
     Route::get('/user/show-profile/{id}',[UserController::class,'showProfile']);
     Route::get('/user/change-password/{id}',[UserController::class,'changePassword']);
-    Route::get('/user/logout', [UserController::class, 'Logout'])->name('logout');
+    /*Route::get('/user/logout', [UserController::class, 'Logout'])->name('logout');*/
     Route::get('/users',[UserController::class,'index'])->name('users');
     Route::get('/user/dt-user',[UserController::class,'dtUser']);
     Route::get('/user/new-user',[UserController::class,'newUser'])->name('new-user');
@@ -81,4 +81,5 @@ Route::get('/clear-cache', function() {
     Artisan::call('cache:clear');
 });
 
-Route::get('/home',[RootController::class,'index'])->name('index');
+Route::get('/home',[RootController::class,'index']);
+Route::get('/',[RootController::class,'index']);

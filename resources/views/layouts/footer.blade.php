@@ -6,10 +6,7 @@
 <!-- Drag Target Area To SlideIn Menu On Small Screens -->
 <div class="drag-target"></div>
 </div>
-<!-- / Layout wrapper -->
-<div class="buy-now">
-    <a href="https://1.envato.market/vuexy_admin" target="_blank" class="btn btn-danger btn-buy-now">Buy Now</a>
-</div>
+
 
 <script src="{{ asset('/assets/vendor/libs/jquery/jquery.js') }}"></script>
 <script src="{{ asset('/assets/vendor/libs/popper/popper.js') }}"></script>
@@ -23,8 +20,13 @@
 <script src="{{ asset('/assets/vendor/libs/apex-charts/apexcharts.js') }}"></script>
 <script src="{{ asset('/assets/vendor/libs/swiper/swiper.js') }}"></script>
 <script src="{{ asset('/assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js') }}"></script>
+<script src="{{ asset('/assets/back/vendor/dropify/src/js/dropify.js') }}"></script>
+<script src="{{ asset('/assets/back/vendor/tinymce/tinymce.min.js') }}"></script>
+<script src="{{ asset('/assets/back/vendor/loadingoverlay/loadingoverlay.js') }}"></script>
 <script src="{{ asset('/assets/js/main.js') }}"></script>
+<script src="{{ asset('/assets/back/js/extra.js') }}"></script>
 <script src="{{ asset('/assets/js/dashboards-analytics.js') }}"></script>
+<script src="{{ asset('/assets/back/js/site_meta.js') }}"></script>
 </body>
 
 

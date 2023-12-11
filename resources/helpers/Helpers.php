@@ -89,7 +89,7 @@ function defaultLogoSite(){
 
 }
 
-function defaultLogoBill(){
+function defaultLogo(){
 
     return url('/assets/images/example-logo-light.png');
 
@@ -130,23 +130,33 @@ function getMetaByName($name){
 
 }
 
-function getLogoSite(){
+function getSiteLogo(){
 
-    $meta = Site_meta::metaByName('logo_site');
+    $meta = Site_meta::metaByName('site_logo');
 
     $attachement = Attachement::getAttachementByTable('site_metas',$meta->id);
 
-    return $attachement ? $attachement->link : defaultLogoSite();
+    return $attachement ? $attachement->link : defaultLogo();
+
+}
+
+function getSiteImage($image){
+
+    $meta = Site_meta::metaByName($image);
+
+    $attachement = Attachement::getAttachementByTable('site_metas',$meta->id);
+
+    return $attachement ? $attachement->link : '';
 
 }
 
 function getLogoBill(){
 
-    $meta = Site_meta::metaByName('logo_bill');
+    $meta = Site_meta::metaByName('site_logo');
 
     $attachement = Attachement::getAttachementByTable('site_metas',$meta->id);
 
-    return $attachement ? url($attachement->link) : defaultLogoBill();
+    return $attachement ? url($attachement->link) : defaultLogo();
 
 }
 

@@ -59,7 +59,7 @@
 
                         <div>
                             <p>© <script>document.write(new Date().getFullYear())</script>
-                                CRM Verychic with
+                                Kaimove with
                                 <i class="mdi mdi-heart text-danger"></i> by AVB</p>
                         </div>
                     </div>

@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>{{ $page_title  }}</title>
+    <title>App - Kaimove</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Management hospital" name="description" />
     <meta content="Morjani" name="author" />
@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="{{ asset('/assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/vendor/libs/datatables-checkboxes-jquery/datatables.checkboxes.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/back/vendor/dropify/dist/css/dropify.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/assets/back/vendor/loadingoverlay/loaddingoverlay.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/vendor/css/pages/cards-advance.css') }}" />
     <script src="{{ asset('/assets/vendor/js/helpers.js') }}"></script>
     <script src="{{ asset('/assets/js/config.js') }}"></script>

@@ -12,41 +12,24 @@ class SiteMetaController extends RootController
 
         $metas = Site_meta::allMetas();
 
-        $logo_site = null;
-        $logo_bill = null;
-        $bill_information_compl = null;
-        $bill_information_verychic = null;
+        $result = null;
 
         foreach ($metas as $meta){
 
-            if($meta->name == 'bill_information_complementaire')
-                $bill_information_compl = $meta->value;
-
-            if($meta->name == 'bill_information_verychic')
-                $bill_information_verychic = $meta->value;
-
-            if($meta->name == 'logo_site'){
+            if($meta->is_file){
 
                 $attachement = Attachement::getAttachementByTable('site_metas',$meta->id);
-                $logo_site = $attachement->link;
+                $result[$meta->name] = $attachement->link;
 
             }
-
-            if($meta->name == 'logo_bill'){
-
-                $attachement = Attachement::getAttachementByTable('site_metas',$meta->id);
-                $logo_bill = $attachement->link;
-
-            }
+            else
+                $result[$meta->name] = $meta->value;
 
         }
 
         $data = [
-            'page' =>'Configuration',
-            'bill_information_compl' => $bill_information_compl,
-            'bill_information_verychic' => $bill_information_verychic,
-            'logo_site' => $logo_site,
-            'logo_bill' => $logo_bill,
+            'page' => 'Configuration',
+            'result' => $result
         ];
 
         back_view('site_meta.settings',$data);

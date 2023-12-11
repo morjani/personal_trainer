@@ -61,3 +61,6 @@ Route::post('/ajax/save-setting',[AjaxController::class,'saveSetting']);
 
 //Event
 Route::get('/ajax/get-event/{id}',[AjaxController::class,'getEvent']);
+
+//Contact
+Route::post('/ajax/save-contact',[AjaxController::class,'saveContact']);

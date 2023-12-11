@@ -73,6 +73,8 @@ class RootController extends Controller
     }
 
     public function index(){
+
+
         frontView('front.index',[]);
     }
 

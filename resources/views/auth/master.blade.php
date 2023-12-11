@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>App Name - @yield('title')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="CRM - Verychic" name="description" />
+    <meta content="App - Kaimove" name="description" />
     <meta content="Verychic" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ 'assets/images/favicon.ico'  }}">

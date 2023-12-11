@@ -6,6 +6,7 @@ use App\Models\Attachement;
 use App\Models\bill;
 use App\Models\Bill_detail;
 use App\Models\City;
+use App\Models\Contact;
 use App\Models\Event;
 use App\Models\Event_category;
 use App\Models\Site_meta;
@@ -779,24 +780,25 @@ class AjaxController extends RootController
             'message'=>'Veuillez vérifier les informations et réessayer'
         ];
 
-        Site_meta::updateSiteMeta('bill_information_complementaire',['value'=>$request->post('bill_information_compl')]);
-        Site_meta::updateSiteMeta('bill_information_verychic',['value'=>$request->post('bill_information_verychic')]);
+        foreach ($request->post() as $key=>$value){
+            Site_meta::updateSiteMeta($key,['value'=>$value]);
+        }
 
-        $logo_site = $request->file('logo_site');
-        $logo_bill = $request->file('logo_bill');
+        foreach ($request->file() as $key=>$value){
 
-        $get_logo_site = Attachement::getAttachementByTable('site_metas',1);
-        $get_logo_bill = Attachement::getAttachementByTable('site_metas',2);
+            $get_meta = Site_meta::metaByName($key);
 
-        if($get_logo_site)
-            uploadFile($logo_site,'site_metas',1,'site_metas',$get_logo_site->id);
-        else
-            uploadFile($logo_site,'site_metas',1,'site_metas');
+            $get_attachement = null;
 
-        if($get_logo_bill)
-            uploadFile($logo_bill,'site_metas',2,'site_metas',$get_logo_bill->id);
-        else
-            uploadFile($logo_bill,'site_metas',2,'site_metas');
+            if($get_meta)
+                $get_attachement = Attachement::getAttachementByTable('site_metas',$get_meta->id);
+
+            if($get_attachement)
+                uploadFile($value,'site_metas',$get_meta->id,'site_metas',$get_attachement->id);
+            else
+                uploadFile($value,'site_metas',$get_meta->id,'site_metas');
+
+        }
 
         $res->status = 'SUCCESS';
         $res->message = 'Les données sont enregistrées avec succès.';
@@ -934,5 +936,47 @@ class AjaxController extends RootController
 
     }
 
+    public function saveContact(Request $request): JsonResponse
+    {
+        $res = (object) [
+            'status'=>'FAILED',
+            'result'=>null,
+            'message'=>'Veuillez vérifier les informations et réessayer'
+        ];
+
+        $fields = Validator::make($request->all(),[
+            'name'=>'required|string',
+            'email'=>'required|string',
+            'phone'=>'required|string',
+            'subject'=>'required|string',
+            'message'=>'required|string',
+        ]);
+
+        if(!$fields->fails()) {
+
+            $data = [
+                'name' => $request->post('name'),
+                'email' => $request->post('email'),
+                'phone' => $request->post('phone'),
+                'subject' => $request->post('subject'),
+                'message' => $request->post('message')
+            ];
+
+            $contact_model = new Contact();
+            $save = $contact_model->storeContact($data);
+
+
+            if ($save) {
+
+                $res->status = 'SUCCESS';
+                $res->result = $save;
+                $res->message = 'Votre message a bien été envoyé.';
+
+            }
+        }
+
+        return response()->json($res);
+
+    }
 
 }
